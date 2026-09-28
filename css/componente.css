@@ -1,0 +1,65 @@
+/* Contenedor central superior */
+#progress-ui-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+/* Diseño del componente visual */
+.progress-tarjeta {
+    background: #ffffff;
+    min-width: 320px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: progressEntrada 0.4s ease-out forwards;
+}
+
+.progress-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.progress-icono { font-size: 22px; }
+.progress-texto { flex-grow: 1; font-size: 15px; }
+.progress-porcentaje { font-size: 14px; color: #7f8c8d; }
+
+/* Estructura de la barra de carga */
+.progress-fondo {
+    width: 100%;
+    height: 8px;
+    background-color: #f1f2f6;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-barra {
+    width: 0%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* Animaciones */
+.progress-ocultando {
+    animation: progressSalida 0.4s ease-in forwards;
+}
+
+@keyframes progressEntrada {
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes progressSalida {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-20px); }
+}

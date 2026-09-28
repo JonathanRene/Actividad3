@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración - Componente Visual JS</title>
+    
+
+    <link rel="stylesheet" href="css/componente.css">
+
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; background-color: #f4f6f7; }
+        .titulo-seccion { color: #2c3e50; margin-bottom: 30px; font-size: 28px; }
+        .botones-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        button { padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; color: white; font-weight: bold; transition: opacity 0.3s;}
+        button:hover { opacity: 0.8; }
+        
+        
+        .btn-pago { background-color: #3498db; }
+        .btn-envio { background-color: #27ae60; }
+        .btn-cancelar { background-color: #e74c3c; }
+        .btn-stock { background-color: #f39c12; color: #333; }
+    </style>
+</head>
+<body>
+
+    <h2 class="titulo-seccion">Realizar una compra</h2>
+
+    <div class="botones-container">
+        <!-- Uso del componente reutilizable pasándole distintos textos, emojis y tiempos de carga -->
+        
+        <button class="btn-pago" onclick="ComponenteProgreso.mostrar('Validando Tarjeta...', '💳', 2500, '#3498db')">
+            Pagar con Tarjeta
+        </button>
+        
+        <button class="btn-envio" onclick="ComponenteProgreso.mostrar('Confirmando Envío...', '📦', 4000, '#27ae60')">
+            Solicitar Envío
+        </button>
+        
+        <button class="btn-cancelar" onclick="ComponenteProgreso.mostrar('Cancelando Pedido...', '🛑', 1500, '#e74c3c')">
+            Cancelar Compra
+        </button>
+        
+        <button class="btn-stock" onclick="ComponenteProgreso.mostrar('Verificando Inventario...', '🔍', 5000, '#f39c12')">
+            Revisar Stock
+        </button>
+    </div>
+
+   
+    <script src="js/componente.js"></script>
+</body>
+</html>
